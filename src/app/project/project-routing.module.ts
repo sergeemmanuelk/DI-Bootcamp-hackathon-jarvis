@@ -1,3 +1,4 @@
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BoardComponent } from './pages/board/board.component';
@@ -20,12 +21,16 @@ const routes: Routes = [
         component: SettingsComponent
       },
       {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {
         path: `issue/:${ProjectConst.IssueId}`,
         component: FullIssueDetailComponent
       },
       {
         path: '',
-        redirectTo: 'board',
+        redirectTo: 'dashboard',
         pathMatch: 'full'
       }
     ]

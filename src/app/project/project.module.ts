@@ -33,6 +33,13 @@ import { FullIssueDetailComponent } from './pages/full-issue-detail/full-issue-d
 import { SettingsComponent } from './pages/settings/settings.component';
 import { ProjectRoutingModule } from './project-routing.module';
 import { ProjectComponent } from './project.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CardReportingComponent } from './components/card-reporting/card-reporting.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +59,9 @@ import { ProjectComponent } from './project.component';
     IssuePrioritySelectComponent,
     IssueReporterSelectComponent,
     IssueAssigneesSelectComponent,
-    ResizerComponent
+    ResizerComponent,
+    DashboardComponent,
+    CardReportingComponent
   ],
   imports: [
     CommonModule,
@@ -64,6 +73,7 @@ import { ProjectComponent } from './project.component';
     NzSelectModule,
     NzNotificationModule,
     NzDrawerModule,
+    NzTableModule,
     NzPopoverModule,
     DragDropModule,
     TextFieldModule,
@@ -71,7 +81,10 @@ import { ProjectComponent } from './project.component';
     ReactiveFormsModule,
     JiraControlModule,
     ContentLoaderModule,
-    QuillModule
+    QuillModule,
+    NzCardModule,
+    NzBadgeModule,
+    NzButtonModule
   ]
 })
 export class ProjectModule {}
