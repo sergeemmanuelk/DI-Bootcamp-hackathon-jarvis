@@ -8,7 +8,7 @@ import { InputComponent } from './input/input.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AvatarComponent } from './avatar/avatar.component';
 
-const JiraControlComponents = [
+const JarvisControlComponents = [
   SvgDefinitionsComponent,
   SvgIconComponent,
   BreadcrumbsComponent,
@@ -17,8 +17,8 @@ const JiraControlComponents = [
   AvatarComponent
 ];
 @NgModule({
-  declarations: JiraControlComponents,
-  exports: JiraControlComponents,
+  declarations: JarvisControlComponents,
+  exports: JarvisControlComponents,
   imports: [CommonModule, ReactiveFormsModule]
 })
-export class JiraControlModule {}
+export class JarvisControlModule {}

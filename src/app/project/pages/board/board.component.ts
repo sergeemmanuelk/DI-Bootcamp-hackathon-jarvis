@@ -7,7 +7,7 @@ import { GoogleAnalyticsService } from '@trungk18/core/services/google-analytics
   styleUrls: ['./board.component.scss']
 })
 export class BoardComponent {
-  breadcrumbs: string[] = ['Projects', 'Jarvis', 'Tableau Kanban'];
+  breadcrumbs: string[] = ['Projects', 'Jarvis', 'Kanban Board'];
 
   constructor(private _googleAnalytics: GoogleAnalyticsService) {}
 

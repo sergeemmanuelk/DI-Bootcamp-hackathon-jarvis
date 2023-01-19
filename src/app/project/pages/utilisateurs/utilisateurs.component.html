@@ -36,7 +36,7 @@
           <td>{{ data.projectId }}</td>
           <td>{{ data.status }}</td>
           <td>
-            <button nz-button nzType="dashed" nzDanger>Retirer</button>
+            <button (click)="removeUser(data)" nz-button nzType="dashed" nzDanger>Retirer</button>
           </td>
         </tr>
       </tbody>

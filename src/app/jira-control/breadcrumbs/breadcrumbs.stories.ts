@@ -13,5 +13,5 @@ const Template: Story<BreadcrumbsComponent> = (args: BreadcrumbsComponent) => ({
 
 export const Default: Story<BreadcrumbsComponent> = Template.bind({});
 Default.args = {
-  items: ['Projects', '', 'Tableau de board ']
+  items: ['Projects', 'Jarvis', 'Kanban Board']
 };

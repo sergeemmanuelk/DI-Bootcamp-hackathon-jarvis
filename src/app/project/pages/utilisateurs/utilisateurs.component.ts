@@ -30,6 +30,32 @@ export class UtilisateursComponent implements OnInit {
     this.isVisible = true;
   }
 
+  removeUser(user:JUser){
+    this.projectService.removeUserToAdded(user)
+    this.getAllUserAdd()
+    this.notification.create(
+      'success',
+      'Utilisateur retiré du projet .',
+      ''
+    );
+  }
+
+
+  getAllUserAdd(){
+    this.userAdd$ = []
+    this.query.userAdder$.subscribe((data)=>{
+      this.query.users$.subscribe((users)=>{
+        data.map((item)=>{
+        users.map((user)=>{
+          if(item == user.id){
+            this.userAdd$.push(user)
+          }
+        })
+      })
+    })
+  })
+  }
+
   handleOk(): void {
     this.query.findUser(this.email).subscribe((data)=>{
       if(data == undefined)
@@ -47,19 +73,9 @@ export class UtilisateursComponent implements OnInit {
             ''
           );
           this.projectService.addUser(data)
-          this.query.userAdder$.subscribe((data)=>{
-          this.query.users$.subscribe((users)=>{
-            data.map((item)=>{
-              console.log(item)
-            users.map((user)=>{
-              if(item == user.id){
-                this.userAdd$ = []
-                this.userAdd$.push(user)
-              }
-            })
-          })
-        })
-      })
+          this.getAllUserAdd()
+          this.email = ''
+          this.username = ''
         }
         else
           this.notification.create(
@@ -148,17 +164,7 @@ export class UtilisateursComponent implements OnInit {
   ]
 
   ngOnInit(): void {
-    // this.query.userAdder$.subscribe((data)=>{
-    //     this.query.users$.subscribe((users)=>{
-    //       data.map((item)=>{
-    //       users.map((user)=>{
-    //         if(item == user.id){
-    //           this.userAdd$.push(user)
-    //         }
-    //       })
-    //     })
-    //   })
-    // })
+    this.getAllUserAdd()
   }
 
 }

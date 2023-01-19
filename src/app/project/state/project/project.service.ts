@@ -53,27 +53,28 @@ export class ProjectService {
 
   addUser(user : JUser){
     this._store.update((state) =>{
-      //let casting = user_id as never
-      console.log('----------- id -----------------')
-      console.log(user)
-      console.log('------------------------------')
-
-      console.log('------------ state ------------')
-      console.log(state.userAdded)
-      console.log('----------------------------------')
-
-      console.log('--------- le state actuelle est -------------------')
-      console.log(state)
-      console.log('------------------------------------------')
       const userAdded = [...state.userAdded , user.id]
-
-      console.log('------------ new array -------------')
-      console.log(userAdded)
-      console.log('-------------------------------------')
       return {
         ...state,
         userAdded
       }
+    })
+  }
+
+
+  removeUserToAdded(user : JUser){
+    this._store.update((state)=>{
+        const userAdded = state.userAdded.map(
+          (item)=>{
+            if(user.id != item){
+              return item
+            }
+          }
+        )
+        return {
+          ...state,
+          userAdded
+        }
     })
   }
 

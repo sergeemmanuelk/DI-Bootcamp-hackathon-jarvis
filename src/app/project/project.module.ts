@@ -14,7 +14,7 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { QuillModule } from 'ngx-quill';
-import { JiraControlModule } from '../jira-control/jira-control.module';
+import { JarvisControlModule } from '../jira-control/jarvis-control.module';
 import { AddIssueModalComponent } from './components/add-issue-modal/add-issue-modal.component';
 import { IssueAssigneesSelectComponent } from './components/add-issue-modal/issue-assignees-select/issue-assignees-select.component';
 import { IssuePrioritySelectComponent } from './components/add-issue-modal/issue-priority-select/issue-priority-select.component';
@@ -39,6 +39,8 @@ import { UtilisateursComponent } from './pages/utilisateurs/utilisateurs.compone
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @NgModule({
@@ -74,17 +76,20 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
     NzSelectModule,
     NzNotificationModule,
     NzDrawerModule,
+    NzTableModule,
     NzPopoverModule,
     DragDropModule,
     TextFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    JiraControlModule,
+    JarvisControlModule,
     ContentLoaderModule,
     QuillModule,
     NzTableModule,
     NzButtonModule,
-    NzFormModule
+    NzCardModule,
+    NzFormModule,
+    NzBadgeModule
   ]
 })
 export class ProjectModule {}
