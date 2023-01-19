@@ -50,10 +50,11 @@ export class UtilisateursComponent implements OnInit {
           this.query.userAdder$.subscribe((data)=>{
           this.query.users$.subscribe((users)=>{
             data.map((item)=>{
+              console.log(item)
             users.map((user)=>{
               if(item == user.id){
+                this.userAdd$ = []
                 this.userAdd$.push(user)
-                console.log(user)
               }
             })
           })
