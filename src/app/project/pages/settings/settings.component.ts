@@ -19,7 +19,7 @@ export class SettingsComponent implements OnInit {
   projectForm: FormGroup;
   categories: ProjectCategory[];
   get breadcrumbs(): string[] {
-    return [ProjectConst.Projects, this.project?.name, 'Settings'];
+    return [ProjectConst.Projects, this.project?.name, 'Parametre'];
   }
 
   constructor(
