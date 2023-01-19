@@ -8,8 +8,18 @@ export class VerificationService {
 
   }
 
+
+
+  verifyIfEmail(field :string) {
+   return field.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
+  }
+
   verifyField(field :string ) {
     return !!field
+  }
+
+  verifyFieldLength(field : string ,size : number) {
+    return field.length >= size;
   }
 
   verifyObj(obj : {}  , typelog = 'log') {
