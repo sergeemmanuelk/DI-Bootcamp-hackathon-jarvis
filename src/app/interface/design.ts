@@ -1,5 +1,5 @@
 export interface JReportingcard  {
-  title  : string ;
+  title  : number ;
   icon ? : string;
   description : string;
 }
