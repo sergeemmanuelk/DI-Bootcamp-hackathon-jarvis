@@ -63,39 +63,5 @@ export class DashboardComponent implements OnInit {
       this.cards[2].title = this.report.hight;
     });
 
-
-
-  constructor(private _projectQuery : ProjectQuery) { }
-
-
-  ngOnInit(): void {
-
-    this._projectQuery.all$.subscribe((project) => {
-
-      this.recentActivities = project.issues.slice(0,5).filter((issue)=>{
-        return issue.priority == IssuePriority.HIGHEST
-      });
-
-      project.issues.forEach((issue) => {
-
-        if (issue.status === IssueStatusDisplay.Done) {
-          this.report.done = this.report.done + 1;
-        }
-         if (issue.status === IssueStatusDisplay.InProgress)
-        {
-          this.report.pending = this.report.pending + 1 ;
-        }
-
-        if (issue.priority === IssuePriority.HIGHEST) {
-          this.report.hight  = this.report.hight + 1;
-        }
-
-      });
-
-      this.cards[0].title = this.report.done;
-      this.cards[1].title = this.report.pending;
-      this.cards[2].title = this.report.hight;
-    });
   }
-
 }
