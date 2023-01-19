@@ -1,6 +1,6 @@
 <div class="pr-6 py-8 pl-8 h-full w-full flex flex-col">
     <breadcrumbs [items]="breadcrumbs"></breadcrumbs>
-    <div class="mt-3 mb-6 text-2xl font-medium">Parametre du projet</div>
+    <div class="mt-3 mb-6 text-2xl font-medium">Project Settings</div>
     <form class="project-form"
           (ngSubmit)="submitForm()"
           [formGroup]="projectForm">
@@ -13,7 +13,7 @@
                    formControlName="name"
                    jAutofocus />
         </div>
-        <div class="form-group mt-3">
+        <!-- <div class="form-group mt-3">
             <label class="label">
                 url du projet
             </label>
@@ -31,7 +31,7 @@
                     {{ category }}
                 </option>
             </select>
-        </div>
+        </div> -->
         <div class="form-group mt-3">
             <label class="label">
                 Description
@@ -45,7 +45,7 @@
             <j-button className="btn-primary mr-2"
                       type="submit"
                       [disabled]="projectForm.invalid">
-                Sauvegarder
+                Save
             </j-button>
             <j-button className="btn-empty"
                       (click)="cancel()">

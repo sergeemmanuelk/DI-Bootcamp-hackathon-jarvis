@@ -4,6 +4,7 @@ import { Query } from '@datorama/akita';
 import { IssueStatus, JIssue } from '@trungk18/interface/issue';
 import { map, delay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { JUser } from '@trungk18/interface/user';
 @Injectable({
   providedIn: 'root'
 })

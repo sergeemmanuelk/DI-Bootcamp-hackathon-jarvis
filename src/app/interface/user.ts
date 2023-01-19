@@ -5,5 +5,6 @@ export interface JUser {
   avatarUrl: string;
   createdAt: string;
   updatedAt: string;
+  status : boolean ;
   issueIds: string[];
 }
