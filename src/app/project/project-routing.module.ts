@@ -1,3 +1,4 @@
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BoardComponent } from './pages/board/board.component';
@@ -5,6 +6,7 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { ProjectComponent } from './project.component';
 import { ProjectConst } from './config/const';
 import { FullIssueDetailComponent } from './pages/full-issue-detail/full-issue-detail.component';
+import { UtilisateursComponent } from './pages/utilisateurs/utilisateurs.component';
 
 const routes: Routes = [
   {
@@ -20,12 +22,20 @@ const routes: Routes = [
         component: SettingsComponent
       },
       {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {
+        path: 'users',
+        component: UtilisateursComponent
+      },
+      {
         path: `issue/:${ProjectConst.IssueId}`,
         component: FullIssueDetailComponent
       },
       {
         path: '',
-        redirectTo: 'board',
+        redirectTo: 'dashboard',
         pathMatch: 'full'
       }
     ]

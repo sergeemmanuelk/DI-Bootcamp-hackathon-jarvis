@@ -15,7 +15,8 @@ export interface JProject {
 
 // eslint-disable-next-line no-shadow
 export enum ProjectCategory {
-  SOFTWARE = 'Software',
+  SOFTWARE = 'Logiciel',
   MARKETING = 'Marketing',
-  BUSINESS = 'Business'
+  BUSINESS = 'Business',
+
 }

@@ -1,0 +1,13 @@
+<div class="pr-6 py-8 pl-8 h-full w-full flex flex-col">
+  <breadcrumbs [items]="breadcrumbs"></breadcrumbs>
+  <div class="cards">
+    <div class="cards-content">
+      <card-reporting [item]="card" *ngFor="let card of cards"></card-reporting>
+    </div>
+  </div>
+
+  <div class="activities">
+    <h4>Listes des différentes activités</h4>
+  </div>
+
+</div>
