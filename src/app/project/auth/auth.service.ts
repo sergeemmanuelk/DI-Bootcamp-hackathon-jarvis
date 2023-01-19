@@ -24,29 +24,24 @@ export class AuthService {
 
   login({ email = '', password = '' }: LoginPayload) {
     this._store.setLoading(true);
-    return this._storage.get("jarvis_user").subscribe(
-      {
-        next : (user : any)=>{
+    this._storage.get("jarvis_user").subscribe((user : any)=>{
 
-          const userConnected = JSON.parse(user);
-          console.log(userConnected);
-          if(!!userConnected) {
+      const userConnected = JSON.parse(user);
+      console.log(userConnected);
+      if(!!userConnected) {
 
-            if(userConnected.email == email ) {
-              this._store.update((state)=>({
-                ...state,
-                ...userConnected
-              }))
-              return of({user : userConnected,message : "utilisateur connecté"})
-            }
-            return of({message : 'email ou mot de passe incorrect'})
-          }
-
-      },
-      error : ()=>{
-        return of({message : "erreur lors de la recuperation des données veuillez contacter les administrateurs"})
+        if(userConnected.email == email ) {
+          this._store.update((state)=>({
+            ...state,
+            ...userConnected
+          }))
+          return of({user : userConnected,message : "utilisateur connecté"})
+        }
+        return of({message : 'email ou mot de passe incorrect'})
       }
     });
+
+    return of({message : "erreur lors de la recuperation des données veuillez contacter les administrateurs"})
 
     /*this._http
       .get<JUser>(`${this.baseUrl}/auth.json`)
