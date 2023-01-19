@@ -38,8 +38,8 @@ import { CardReportingComponent } from './components/card-reporting/card-reporti
 import { UtilisateursComponent } from './pages/utilisateurs/utilisateurs.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-
-
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @NgModule({
   declarations: [
@@ -83,7 +83,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     ContentLoaderModule,
     QuillModule,
     NzTableModule,
-    NzButtonModule
+    NzButtonModule,
+    NzFormModule
   ]
 })
 export class ProjectModule {}

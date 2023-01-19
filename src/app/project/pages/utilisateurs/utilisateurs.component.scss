@@ -28,3 +28,18 @@ tbody tr td:first-child img{
 .font-medium button{
  margin-left: 1em;
 }
+
+form{
+  width: 100%;
+  padding: .5em;
+}
+
+input{
+  position: relative;
+  width: 100%;
+  outline: none;
+  border-radius: .2em;
+  padding: .2em;
+  border: 1px solid black;
+  margin-top: .5em;
+}

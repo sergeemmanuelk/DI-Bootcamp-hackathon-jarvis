@@ -4,18 +4,31 @@ import { Query } from '@datorama/akita';
 import { IssueStatus, JIssue } from '@trungk18/interface/issue';
 import { map, delay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { JUser } from '@trungk18/interface/user';
+
+
 @Injectable({
   providedIn: 'root'
 })
-export class ProjectQuery extends Query<ProjectState> {
+export class ProjectQuery extends Query<ProjectState> {6
+
+
   isLoading$ = this.selectLoading();
   all$ = this.select();
   issues$ = this.select('issues');
   users$ = this.select('users');
+  userAdder$ = this.select('userAdded')
 
   constructor(protected store: ProjectStore) {
     super(store);
+  }
+
+  findUser(email : string){
+    return this.users$.pipe(
+      (map((data)=>{
+        let result = data.find((item)=>item.email==email)
+        return result
+      }))
+    )
   }
 
   lastIssuePosition = (status: IssueStatus): number => {

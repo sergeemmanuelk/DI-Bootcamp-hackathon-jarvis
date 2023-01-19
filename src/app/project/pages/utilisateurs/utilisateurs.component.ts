@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { NzTableModule } from 'ng-zorro-antd/table';
+import { Component, OnInit  } from '@angular/core';
+import { ProjectQuery } from '@trungk18/project/state/project/project.query';
+import { JUser } from '@trungk18/interface/user';
+import { Observable } from 'rxjs';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { ProjectService } from '@trungk18/project/state/project/project.service';
 
 @Component({
   selector: 'utilisateurs',
@@ -8,9 +12,68 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 })
 export class UtilisateursComponent implements OnInit {
 
-  constructor() { }
+  username : string = ''
+  email : string = ''
+  allUser$ : Observable<JUser[]>
+
+  userAdd$ = []
+
+  constructor(private query :  ProjectQuery , private notification : NzNotificationService , private projectService : ProjectService) { }
+
 
   breadmenu: string[] = ['Projects', 'Jarvis', 'Espace d\'administration'];
+
+  isVisible = false;
+
+
+  showModal(): void {
+    this.isVisible = true;
+  }
+
+  handleOk(): void {
+    this.query.findUser(this.email).subscribe((data)=>{
+      if(data == undefined)
+        this.notification.create(
+          'error',
+          'Aucun utilisateur trouvé, veuillez réessayer .',
+          ''
+        );
+      else{
+        if(this.username == data.name){
+          this.isVisible = false;
+          this.notification.create(
+            'success',
+            'Utilisateur ajouté avec succès  .',
+            ''
+          );
+          this.projectService.addUser(data)
+          this.query.userAdder$.subscribe((data)=>{
+          this.query.users$.subscribe((users)=>{
+            data.map((item)=>{
+            users.map((user)=>{
+              if(item == user.id){
+                this.userAdd$.push(user)
+                console.log(user)
+              }
+            })
+          })
+        })
+      })
+        }
+        else
+          this.notification.create(
+            'error',
+            'Aucun utilisateur trouvé, veuillez réessayer .',
+            ''
+          );
+      }
+    })
+
+  }
+
+  handleCancel(): void {
+    this.isVisible = false;
+  }
 
 
 
@@ -84,6 +147,17 @@ export class UtilisateursComponent implements OnInit {
   ]
 
   ngOnInit(): void {
+    // this.query.userAdder$.subscribe((data)=>{
+    //     this.query.users$.subscribe((users)=>{
+    //       data.map((item)=>{
+    //       users.map((user)=>{
+    //         if(item == user.id){
+    //           this.userAdd$.push(user)
+    //         }
+    //       })
+    //     })
+    //   })
+    // })
   }
 
 }

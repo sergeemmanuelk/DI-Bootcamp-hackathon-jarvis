@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./work-in-progress/work-in-progress.module').then(
         (m) => m.WorkInProgressModule
-      )
+      ) 
   },
   {
     path: '',

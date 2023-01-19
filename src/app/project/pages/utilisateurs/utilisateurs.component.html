@@ -4,10 +4,22 @@
   </div>
   <div class="mt-3 mb-6 text-2xl font-medium">
     Gestion des Utilisateurs
-    <button nz-button nzType="primary">Ajouter un utilisateur</button>
+    <button nz-button nzType="primary" (click)="showModal()">Ajouter un utilisateur</button>
   </div>
+  <nz-modal nzCancelText="Annuler" nzOkText="Valider" [(nzVisible)]="isVisible" nzTitle="Ajouter un nouvel utilisateur" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+      <form nz-form [nzLayout]="'inline'">
+          <nz-form-control nzErrorTip="Veillez entrer un nom">
+              <input [(ngModel)]="username" name="username" nz-input placeholder="username ..." />
+          </nz-form-control>
+          <nz-form-control nzErrorTip="Addresse mail non valide">
+            <input [(ngModel)]="email" name="email" nz-input placeholder="addresse mail ..." />
+        </nz-form-control>
+      </form>
+    </ng-container>
+  </nz-modal>
   <div class="container-body">
-    <nz-table #basicTable [nzData]="users">
+    <nz-table #basicTable [nzData]="userAdd$" nzNoResult="Aucun utilisateur disponible ...">
       <thead>
         <tr>
           <th>Avatar</th>
@@ -19,9 +31,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let data of basicTable.data">
-          <td><img [src]="data.avatar" alt="user avatar"></td>
-          <td>{{ data.username }}</td>
-          <td>{{ data.project_name }}</td>
+          <td><img [src]="data.avatarUrl" alt="user avatar"></td>
+          <td>{{ data.name }}</td>
+          <td>{{ data.projectId }}</td>
           <td>{{ data.status }}</td>
           <td>
             <button nz-button nzType="dashed" nzDanger>Retirer</button>
