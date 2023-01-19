@@ -37,6 +37,7 @@ export class AddIssueModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
+
     this.reporterUsers$ = this._projectQuery.users$.pipe(
       untilDestroyed(this),
       tap((users) => {
@@ -47,7 +48,8 @@ export class AddIssueModalComponent implements OnInit {
       })
     );
 
-    this.assignees$ = this._projectQuery.users$;
+
+    this.assignees$ = (this._projectQuery.users$);
   }
 
   initForm() {

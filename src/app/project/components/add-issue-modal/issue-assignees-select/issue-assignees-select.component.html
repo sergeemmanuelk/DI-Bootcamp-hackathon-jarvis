@@ -8,7 +8,7 @@
                *ngFor="let user of users"
                [nzValue]="user.id"
                [nzLabel]="user.name">
-        <j-user [user]="user"></j-user>
+        <j-user [user]="user" *ngIf="user.status"></j-user>
     </nz-option>
 </nz-select>
 <ng-template #assigneesSelectedTmpl
