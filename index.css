@@ -1,0 +1,76 @@
+
+.navbar {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a.home {
+  background-color: #2196F3;
+  color: white;
+}
+
+.navbar .login-container {
+  float: right;
+}
+
+.navbar input {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width:150px;
+}
+
+.navbar .login-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 25px;
+  background-color: #1890ff;
+  color: white;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar .login-container button:hover {
+  background-color: #1890ff;
+}
+h2{
+    color:#1890ff ;
+}
+.container{
+    display: inline-block;
+    text-align: center;
+    background-color: aliceblue;
+    border: 1px solid white;
+    width:30% ;
+    margin-left:35%;
+    
+}
+
+.container input[class=input]{
+    width:70%;
+    height: 30px;
+    border-radius: 5px;
+   border: 0.5px solid;
+}
+.container .submit{
+    width: 60%;
+    height: 30px;
+    border-radius: 10px;
+   border: 1px solid white;
+   background-color: #1890ff;
+   color: white;
+   font-weight: bold;
+}
