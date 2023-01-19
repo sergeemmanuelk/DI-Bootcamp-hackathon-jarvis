@@ -1,6 +1,8 @@
+import { JIssue } from './../../../interface/issue';
 import { JReportingcard } from './../../../interface/design';
 import { Component, OnInit } from '@angular/core';
-import { ProjectConst } from '@trungk18/project/config/const';
+import { ProjectQuery } from '@trungk18/project/state/project/project.query';
+
 
 @Component({
   selector: 'dashboard',
@@ -24,10 +26,15 @@ export class DashboardComponent implements OnInit {
       description : 'task urgentes'
     }
   ]
+  recentActivities!: JIssue[];
 
-  constructor() { }
+  constructor(private _projectQuery : ProjectQuery) { }
 
   ngOnInit(): void {
+    this._projectQuery.all$.subscribe((project) => {
+      console.log(project.issues[0]);
+      this.recentActivities = project.issues.slice(0,5);
+    });
   }
 
 }

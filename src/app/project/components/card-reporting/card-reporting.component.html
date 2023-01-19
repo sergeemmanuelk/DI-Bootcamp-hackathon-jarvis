@@ -1,10 +1,5 @@
-<div #card>
-  <div class="card-reporting-body">
-    <br>
-    <br>
-    <div class="card-reporting-text">
-      <h3 style="font-size: 50px;">{{item.title}}</h3>
-      <p style="color:rgb(91, 89, 89);text-transform: uppercase;">{{item.description}}</p>
-    </div>
-  </div>
-</div>
+
+<nz-card style="width:300px;height: 24vh;" [nzBordered]="true" >
+  <h3 style="font-size: 50px;">{{item.title}}</h3>
+  <p style="color:rgb(91, 89, 89);text-transform: uppercase;">{{item.description}}</p>
+</nz-card>

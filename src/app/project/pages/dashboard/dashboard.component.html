@@ -7,7 +7,41 @@
   </div>
 
   <div class="activities">
-    <h4>Listes des différentes activités</h4>
+
+    <nz-badge [nzCount]="recentActivities.length" style="margin-top: 3%;">
+      <h1>Listes des différentes activités</h1> <a class="head-example"></a>
+    </nz-badge>
+    <br>
+    <br>
+
+    <div class="activities-table">
+      <nz-table #basicTable [jAutofocus]="true" [nzData]="recentActivities">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>titre</th>
+            <th>status</th>
+            <th>priorité</th>
+            <th>dealine</th>
+            <th>date de creation</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.id }}</td>
+            <td>{{ data.title }}</td>
+            <td>{{ data.status }}</td>
+            <td>{{ data.priority }}</td>
+            <td>{{ data.estimate }}</td>
+            <td>{{ data.createdAt | date }}</td>
+            <td>
+              <button nz-button nzType="primary" routerLink="/project/issue/{{data.id}}">Voir +</button>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
   </div>
 
 </div>

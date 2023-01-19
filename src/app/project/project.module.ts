@@ -35,6 +35,11 @@ import { ProjectRoutingModule } from './project-routing.module';
 import { ProjectComponent } from './project.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CardReportingComponent } from './components/card-reporting/card-reporting.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+
 
 @NgModule({
   declarations: [
@@ -68,6 +73,7 @@ import { CardReportingComponent } from './components/card-reporting/card-reporti
     NzSelectModule,
     NzNotificationModule,
     NzDrawerModule,
+    NzTableModule,
     NzPopoverModule,
     DragDropModule,
     TextFieldModule,
@@ -75,7 +81,10 @@ import { CardReportingComponent } from './components/card-reporting/card-reporti
     ReactiveFormsModule,
     JiraControlModule,
     ContentLoaderModule,
-    QuillModule
+    QuillModule,
+    NzCardModule,
+    NzBadgeModule,
+    NzButtonModule
   ]
 })
 export class ProjectModule {}
