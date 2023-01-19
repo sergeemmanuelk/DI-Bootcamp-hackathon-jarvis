@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { JIssue, IssueStatusDisplay, IssuePriority } from './../../../interface/issue';
+=======
+import { JIssue } from './../../../interface/issue';
+>>>>>>> 112f4ee (feat : ajout du tableau des activités recentes sur le dashboard)
 import { JReportingcard } from './../../../interface/design';
 import { Component, OnInit } from '@angular/core';
 import { ProjectQuery } from '@trungk18/project/state/project/project.query';
@@ -33,6 +37,7 @@ export class DashboardComponent implements OnInit {
   ]
   recentActivities!: JIssue[];
 
+<<<<<<< HEAD
   constructor(private _projectQuery : ProjectQuery ) { }
 
   ngOnInit(): void {
@@ -66,6 +71,15 @@ export class DashboardComponent implements OnInit {
 
 
 
+=======
+  constructor(private _projectQuery : ProjectQuery) { }
+
+  ngOnInit(): void {
+    this._projectQuery.all$.subscribe((project) => {
+      console.log(project.issues[0]);
+      this.recentActivities = project.issues.slice(0,5);
+    });
+>>>>>>> 112f4ee (feat : ajout du tableau des activités recentes sur le dashboard)
   }
 
 }
