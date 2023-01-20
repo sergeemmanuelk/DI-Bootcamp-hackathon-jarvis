@@ -8,6 +8,7 @@ import { ProjectService } from '@trungk18/project/state/project/project.service'
 import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NoWhitespaceValidator } from '@trungk18/core/validators/no-whitespace.validator';
+import { Location } from '@angular/common';
 
 @Component({
   templateUrl: './settings.component.html',
@@ -27,7 +28,8 @@ export class SettingsComponent implements OnInit {
     private _projectService: ProjectService,
     private _notification: NzNotificationService,
     private _fb: FormBuilder,
-    private _router: Router
+    private _router: Router,
+    private location : Location
   ) {
     this.categories = [
       ProjectCategory.BUSINESS,
@@ -73,6 +75,6 @@ export class SettingsComponent implements OnInit {
   }
 
   cancel() {
-    this._router.navigate(['/']);
+    this.location.back();
   }
 }
