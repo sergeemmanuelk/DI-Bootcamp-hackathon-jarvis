@@ -11,6 +11,7 @@ export interface JProject {
   updateAt: string;
   issues: JIssue[];
   users: JUser[];
+  userAdded : string[];
 }
 
 // eslint-disable-next-line no-shadow

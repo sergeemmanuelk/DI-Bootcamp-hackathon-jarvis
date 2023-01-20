@@ -4,6 +4,7 @@ import { arrayRemove, arrayUpsert, setLoading } from '@datorama/akita';
 import { JComment } from '@trungk18/interface/comment';
 import { JIssue } from '@trungk18/interface/issue';
 import { JProject } from '@trungk18/interface/project';
+import { JUser } from '@trungk18/interface/user';
 import { DateUtil } from '@trungk18/project/utils/date';
 import { of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
@@ -48,6 +49,32 @@ export class ProjectService {
       ...state,
       ...project
     }));
+  }
+
+  addUser(user : JUser){
+    this._store.update((state) =>{
+      //let casting = user_id as never
+      console.log('----------- id -----------------')
+      console.log(user)
+      console.log('------------------------------')
+
+      console.log('------------ state ------------')
+      console.log(state.userAdded)
+      console.log('----------------------------------')
+
+      console.log('--------- le state actuelle est -------------------')
+      console.log(state)
+      console.log('------------------------------------------')
+      const userAdded = [...state.userAdded , user.id]
+
+      console.log('------------ new array -------------')
+      console.log(userAdded)
+      console.log('-------------------------------------')
+      return {
+        ...state,
+        userAdded
+      }
+    })
   }
 
   updateIssue(issue: JIssue) {
