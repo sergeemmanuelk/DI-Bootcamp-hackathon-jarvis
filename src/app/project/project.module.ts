@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './../../../../safex/src/app/project/pages/not-found/not-found.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { CommonModule } from '@angular/common';
