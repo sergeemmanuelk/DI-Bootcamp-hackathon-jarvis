@@ -1,0 +1,26 @@
+<div class="content">
+  <div class="login-form">
+    <h1 style="font-size: 40px">Authentification</h1>
+    <form class="form-group form" method="post">
+      <div class="form-field" #username>
+        <label>email</label>
+        <input type="email" class="form-control" id="username" name="username" [(ngModel)]="loginForm.email"
+          placeholder="votre email">
+      </div>
+      <div class="form-field" #password>
+        <label>Mot de passe</label>
+        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="loginForm.password"
+          placeholder="votre de mot de passe">
+        <br>
+      </div>
+      <button nz-button class="login-form-button login-form-margin col-md-12 mt-5" [nzType]="'primary'"
+        (click)="login()" [nzLoading]="isFilled">Se connecter</button>
+      <div class="mt-5 text-center">
+        <p>vous n'avez pas de compte ? <a routerLink="/auth/register"> creer un compte</a></p>
+      </div>
+    </form>
+  </div>
+  <div class="information">
+
+  </div>
+</div>

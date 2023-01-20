@@ -14,6 +14,7 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { QuillModule } from 'ngx-quill';
 import * as Sentry from '@sentry/angular';
 import { Router } from '@angular/router';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +28,8 @@ import { Router } from '@angular/router';
     NzIconModule.forRoot([]),
     environment.production ? [] : AkitaNgDevtools,
     AkitaNgRouterStoreModule,
-    QuillModule.forRoot()
+    QuillModule.forRoot(),
+    NzCardModule
   ],
   providers: [
     {

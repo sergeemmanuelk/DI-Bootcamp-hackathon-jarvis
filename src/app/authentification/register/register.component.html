@@ -1,0 +1,38 @@
+<div class="content">
+  <div class="login-form">
+    <h1  style="font-size: 40px">Inscription</h1>
+    <form class="form-group form" method="post">
+      <div class="form-field">
+        <label>Nom</label>
+        <input type="text" class="form-control" name="firstname" placeholder="votre nom" [(ngModel)]="registerForm.firstname">
+      </div>
+
+      <div class="form-field">
+        <label>Prenom</label>
+        <input type="text" class="form-control" name="lastname" placeholder="votre prenom" [(ngModel)]="registerForm.lastname">
+      </div>
+
+
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" placeholder="votre email"  [(ngModel)]="registerForm.email">
+      </div>
+
+      <div class="form-field">
+        <label>Mot de passe</label>
+        <input type="password" class="form-control" name="password" placeholder="votre mot de passe" [(ngModel)]="registerForm.password">
+        <br>
+      </div>
+
+      <button nz-button (click)="register()" class="login-form-button login-form-margin col-md-12 mt-5" [nzType]="'primary'">S'inscrire</button>
+      <div class="mt-5 text-center" >
+        <p>vous avez un compte ? <a routerLink="/auth/login"> se connecter</a></p>
+      </div>
+    </form>
+  </div>
+  <div class="information">
+    <h1>
+
+    </h1>
+  </div>
+</div>

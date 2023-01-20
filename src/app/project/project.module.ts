@@ -41,7 +41,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzCardModule } from 'ng-zorro-antd/card';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 @NgModule({
   declarations: [
@@ -89,7 +89,8 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
     NzButtonModule,
     NzCardModule,
     NzFormModule,
-    NzBadgeModule
+    NzSpinModule,
+    NzBadgeModule,
   ]
 })
 export class ProjectModule {}
