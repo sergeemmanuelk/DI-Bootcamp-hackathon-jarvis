@@ -51,28 +51,14 @@ export class ProjectService {
     }));
   }
 
-  addUser(user : JUser){
+  addUser(user : any){
     this._store.update((state) =>{
-      //let casting = user_id as never
-      console.log('----------- id -----------------')
-      console.log(user)
-      console.log('------------------------------')
 
-      console.log('------------ state ------------')
-      console.log(state.userAdded)
-      console.log('----------------------------------')
+      const users = [...state.users , user]
 
-      console.log('--------- le state actuelle est -------------------')
-      console.log(state)
-      console.log('------------------------------------------')
-      const userAdded = [...state.userAdded , user.id]
-
-      console.log('------------ new array -------------')
-      console.log(userAdded)
-      console.log('-------------------------------------')
       return {
         ...state,
-        userAdded
+        users
       }
     })
   }

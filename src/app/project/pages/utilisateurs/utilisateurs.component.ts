@@ -14,7 +14,9 @@ export class UtilisateursComponent implements OnInit {
 
   username : string = ''
   email : string = ''
-  allUser$ : Observable<JUser[]>
+  picture : string = ''
+  project_name : string = ''
+  allUser$ : JUser[] = []
 
   userAdd$ = []
 
@@ -31,44 +33,46 @@ export class UtilisateursComponent implements OnInit {
   }
 
   handleOk(): void {
-    this.query.findUser(this.email).subscribe((data)=>{
-      if(data == undefined)
-        this.notification.create(
-          'error',
-          'Aucun utilisateur trouvé, veuillez réessayer .',
-          ''
-        );
-      else{
-        if(this.username == data.name){
-          this.isVisible = false;
-          this.notification.create(
-            'success',
-            'Utilisateur ajouté avec succès  .',
-            ''
-          );
-          this.projectService.addUser(data)
-          this.query.userAdder$.subscribe((data)=>{
-          this.query.users$.subscribe((users)=>{
-            data.map((item)=>{
-              console.log(item)
-            users.map((user)=>{
-              if(item == user.id){
-                this.userAdd$ = []
-                this.userAdd$.push(user)
-              }
-            })
-          })
-        })
-      })
-        }
-        else
-          this.notification.create(
-            'error',
-            'Aucun utilisateur trouvé, veuillez réessayer .',
-            ''
-          );
-      }
-    })
+
+    const user : any = {id : "5678-6789-6789-45678-45678" , name : this.username , avatarUrl : this.picture , projectId : this.project_name}
+    //this.projectService.addUser(user)
+
+    this.allUser$.push({...user})
+
+    // this.query.findUser(this.email).subscribe((data)=>{
+    //   if(data == undefined)
+    //     this.notification.create(
+    //       'error',
+    //       'Aucun utilisateur trouvé, veuillez réessayer .',
+    //       ''
+    //     );
+    //   else{
+    //     if(this.username == data.name){
+    //       this.isVisible = false;
+    //       this.notification.create('success','Utilisateur ajouté avec succès  .','');
+    //       this.projectService.addUser(data)
+    //       this.query.userAdder$.subscribe((data)=>{
+    //       this.query.users$.subscribe((users)=>{
+    //         data.map((item)=>{
+    //           console.log(item)
+    //         users.map((user)=>{
+    //           if(item == user.id){
+    //             this.userAdd$ = []
+    //             this.userAdd$.push(user)
+    //           }
+    //         })
+    //       })
+    //     })
+    //   })
+    //     }
+    //     else
+    //       this.notification.create(
+    //         'error',
+    //         'Aucun utilisateur trouvé, veuillez réessayer .',
+    //         ''
+    //       );
+    //   }
+    // })
 
   }
 
@@ -76,89 +80,17 @@ export class UtilisateursComponent implements OnInit {
     this.isVisible = false;
   }
 
-
-
-  users = [
-    {
-      'username' : 'Mister Jhon' ,
-      'avatar' : 'https://images.unsplash.com/photo-1573495627361-d9b87960b12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' ,
-      'project_name' : '@Dev App mobile',
-      'status' : true
-    },{
-      'username' : 'Mister Jhon' ,
-      'avatar' : 'https://images.unsplash.com/photo-1573495627361-d9b87960b12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' ,
-      'project_name' : '@Dev App mobile',
-      'status' : true
-    },{
-      'username' : 'Mister Jhon' ,
-      'avatar' : 'https://images.unsplash.com/photo-1573495627361-d9b87960b12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' ,
-      'project_name' : '@Dev App mobile',
-      'status' : true
-    },{
-      'username' : 'Mister Jhon' ,
-      'avatar' : 'https://images.unsplash.com/photo-1573495627361-d9b87960b12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' ,
-      'project_name' : '@Dev App mobile',
-      'status' : true
-    },{
-      'username' : 'Mister Jhon' ,
-      'avatar' : 'https://images.unsplash.com/photo-1573495627361-d9b87960b12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' ,
-      'project_name' : '@Dev App mobile',
-      'status' : true
-    },{
-      'username' : 'Mister Jhon' ,
-      'avatar' : 'https://images.unsplash.com/photo-1573495627361-d9b87960b12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' ,
-      'project_name' : '@Dev App mobile',
-      'status' : true
-    },{
-      'username' : 'Mister Jhon' ,
-      'avatar' : 'https://images.unsplash.com/photo-1573495627361-d9b87960b12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' ,
-      'project_name' : '@Dev App mobile',
-      'status' : true
-    },{
-      'username' : 'Mister Jhon' ,
-      'avatar' : 'https://images.unsplash.com/photo-1573495627361-d9b87960b12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' ,
-      'project_name' : '@Dev App mobile',
-      'status' : true
-    },{
-      'username' : 'Mister Jhon' ,
-      'avatar' : 'https://images.unsplash.com/photo-1573495627361-d9b87960b12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' ,
-      'project_name' : '@Dev App mobile',
-      'status' : true
-    },{
-      'username' : 'Mister Jhon' ,
-      'avatar' : 'https://images.unsplash.com/photo-1573495627361-d9b87960b12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' ,
-      'project_name' : '@Dev App mobile',
-      'status' : true
-    },{
-      'username' : 'Mister Jhon' ,
-      'avatar' : 'https://images.unsplash.com/photo-1573495627361-d9b87960b12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' ,
-      'project_name' : '@Dev App mobile',
-      'status' : true
-    },{
-      'username' : 'Mister Jhon' ,
-      'avatar' : 'https://images.unsplash.com/photo-1573495627361-d9b87960b12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' ,
-      'project_name' : '@Dev App mobile',
-      'status' : true
-    },{
-      'username' : 'Mister Jhon' ,
-      'avatar' : 'https://images.unsplash.com/photo-1573495627361-d9b87960b12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' ,
-      'project_name' : '@Dev App mobile',
-      'status' : true
-    },
-  ]
+  /*addNewUser() {
+    this.allUser$.subscribe((users)=>{
+      const $users = users;
+      $users.push({email : this.email , })
+    })
+  }*/
 
   ngOnInit(): void {
-    // this.query.userAdder$.subscribe((data)=>{
-    //     this.query.users$.subscribe((users)=>{
-    //       data.map((item)=>{
-    //       users.map((user)=>{
-    //         if(item == user.id){
-    //           this.userAdd$.push(user)
-    //         }
-    //       })
-    //     })
-    //   })
-    // })
+    this.query.users$.subscribe((data : JUser[])=>{
+      this.allUser$ = data
+    })
   }
 
 }

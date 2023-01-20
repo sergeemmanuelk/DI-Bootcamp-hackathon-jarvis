@@ -24,6 +24,9 @@ tbody tr td:first-child img{
   height: 100%;
   border-radius: 50%;
 }
+nz-table{
+  width: 100% !important;
+}
 
 .font-medium button{
  margin-left: 1em;
@@ -34,12 +37,3 @@ form{
   padding: .5em;
 }
 
-input{
-  position: relative;
-  width: 100%;
-  outline: none;
-  border-radius: .2em;
-  padding: .2em;
-  border: 1px solid black;
-  margin-top: .5em;
-}

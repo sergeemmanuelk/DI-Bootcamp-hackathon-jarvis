@@ -10,16 +10,22 @@
     <ng-container *nzModalContent>
       <form nz-form [nzLayout]="'inline'">
           <nz-form-control nzErrorTip="Veillez entrer un nom">
-              <input [(ngModel)]="username" name="username" nz-input placeholder="username ..." />
+              <input [(ngModel)]="username" name="username" class="form-control" placeholder="username" />
           </nz-form-control>
           <nz-form-control nzErrorTip="Addresse mail non valide">
-            <input [(ngModel)]="email" name="email" nz-input placeholder="addresse mail ..." />
+            <input  [(ngModel)]="email" name="email" class="form-control mt-2" placeholder="addresse mail" />
+        </nz-form-control>
+        <nz-form-control nzErrorTip="Entrer le nom du projet">
+          <input  [(ngModel)]="project_name" name="text" class="form-control mt-2" placeholder="nom du projet" />
+        </nz-form-control>
+        <nz-form-control nzErrorTip="Entrer le lien du profil">
+          <input  [(ngModel)]="picture" name="text" class="form-control mt-2" placeholder="profil utilisateur" />
         </nz-form-control>
       </form>
     </ng-container>
   </nz-modal>
   <div class="container-body">
-    <nz-table #basicTable [nzData]="userAdd$" nzNoResult="Aucun utilisateur disponible ...">
+    <nz-table #basicTable [nzData]="allUser$" style="width: 100% !important;" nzNoResult="Aucun utilisateur disponible ...">
       <thead>
         <tr>
           <th>Avatar</th>
@@ -30,7 +36,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let data of basicTable.data">
+        <tr *ngFor="let data of allUser$">
           <td><img [src]="data.avatarUrl" alt="user avatar"></td>
           <td>{{ data.name }}</td>
           <td>{{ data.projectId }}</td>
