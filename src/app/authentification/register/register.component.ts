@@ -42,15 +42,10 @@ export class RegisterComponent implements OnInit {
     }else
     {
       this._authService.register(this.registerForm).subscribe((responce)=>{
-        this._notification.create('sucess','',`Votre compte a été crée avec succes`);
+        this._notification.create('success','',`Votre compte a été crée avec succes`);
         this.router.navigate(["/auth/login"]);
       });
     }
-  }
-
-
-  createNewUser(){
-
   }
 
   displayErrors(errorTable : number[]) {

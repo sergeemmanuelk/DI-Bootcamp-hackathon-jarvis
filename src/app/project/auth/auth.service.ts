@@ -15,6 +15,7 @@ export class AuthService {
 
 
   register(user:any ) {
+    user.password = btoa(user.password);
     this._store.setLoading(true);
     this._storage.set('jarvis_user',JSON.stringify(user));
     return of({message : "Utilisateur crée avec succes"})
@@ -28,7 +29,7 @@ export class AuthService {
       console.log(userConnected);
       if(!!userConnected) {
 
-        if(userConnected.email == email ) {
+        if(userConnected.email == email && password  == atob(userConnected.password) ) {
           this._store.update((state)=>({
             ...state,
             ...userConnected
