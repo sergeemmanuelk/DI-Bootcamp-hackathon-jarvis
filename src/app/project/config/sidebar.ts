@@ -4,8 +4,6 @@ export const SideBarLinks = [
   new SideBarLink('Tableau de board', 'report', 'dashboard'),
   new SideBarLink('Tableau kanban', 'board', 'board'),
   new SideBarLink('Gestion utilisateurs','page', 'users'),
-  new SideBarLink('Gestion projects', 'page', 'users'),
-  new SideBarLink('Gestion incidents', 'page', 'users'),
   /*new SideBarLink('Issues and filters', 'filters'),
   new SideBarLink('Pages', 'page'),
   new SideBarLink('Reports', 'report'),

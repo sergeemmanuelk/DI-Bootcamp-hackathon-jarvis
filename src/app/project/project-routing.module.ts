@@ -6,6 +6,7 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { ProjectComponent } from './project.component';
 import { ProjectConst } from './config/const';
 import { FullIssueDetailComponent } from './pages/full-issue-detail/full-issue-detail.component';
+import { UtilisateursComponent } from './pages/utilisateurs/utilisateurs.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
       {
         path: 'settings',
         component: SettingsComponent
+      },
+      {
+        path: 'users',
+        component: UtilisateursComponent
       },
       {
         path: 'dashboard',
