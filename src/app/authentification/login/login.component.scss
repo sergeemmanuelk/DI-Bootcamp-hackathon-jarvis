@@ -1,0 +1,92 @@
+.content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.login-form {
+  width: 50% !important;
+}
+
+.login-form h1 {
+  text-align: center;
+  margin-top: 20%;
+}
+
+.login-form {
+  margin-left: 10%;
+}
+
+.login-form .form-field .error {
+  border: 1px solid red;
+}
+
+.login-form .form {
+  margin-top: 20%;
+}
+
+.login-form .form-field input {
+  width: 100%;
+}
+
+.login-form .btn-primary {
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.information {
+  width: 60%;
+  background: url('https://media.istockphoto.com/id/1189303336/photo/mature-african-businessman-at-meeting.jpg?s=612x612&w=0&k=20&c=vIqszOxrhbQUdwEbTdmz4CI37gf9lFgmR_xWN-RmEm0=');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin-left: 10%;
+
+  h1 {
+    color: white;
+    position: absolute;
+    margin-top: 20%;
+    text-align: center;
+    margin-left: 15%;
+  }
+}
+
+
+
+.information h1 a {
+  text-decoration: none;
+  color: white;
+}
+
+@media (min-width: 0) and (max-width: 900px) {
+  .content {
+    display: inline;
+  }
+  .information {
+    visibility: hidden;
+  }
+
+  .login-form {
+    width: 100% !important;
+    h1{
+      font-size: 20px !important;
+    }
+  }
+
+  .login-form .form-field input {
+    width: 80%;
+  }
+
+  .login-form {
+    margin-left: 10;
+  }
+
+  .login-form .btn-primary {
+    width: 80%;
+  }
+
+  .login-form h1 {
+    text-align: justify;
+    margin-left: 20%;
+  }
+}

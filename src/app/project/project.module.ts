@@ -39,7 +39,8 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     IssueAssigneesSelectComponent,
     ResizerComponent,
     DashboardComponent,
-    CardReportingComponent
+    CardReportingComponent,
+    NotFoundPageComponent,
   ],
   imports: [
     CommonModule,
@@ -84,7 +86,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     QuillModule,
     NzCardModule,
     NzBadgeModule,
-    NzButtonModule
+    NzButtonModule,
+    NzSpinModule
   ]
 })
 export class ProjectModule {}

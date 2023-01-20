@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from './state/project/project.service';
 import { AuthService } from './auth/auth.service';
 import { LoginPayload } from '@trungk18/project/auth/loginPayload';
+import { ProjectQuery } from './state/project/project.query';
 
 @Component({
   selector: 'app-project',
@@ -10,8 +11,9 @@ import { LoginPayload } from '@trungk18/project/auth/loginPayload';
 })
 export class ProjectComponent implements OnInit {
   expanded: boolean;
-  constructor(private _projectService: ProjectService, private _authService: AuthService) {
+  constructor(private _projectService: ProjectService, private _authService: AuthService , public _projectQuery : ProjectQuery) {
     this.expanded = true;
+    this._projectService.setLoading(true);
   }
 
   ngOnInit(): void {
