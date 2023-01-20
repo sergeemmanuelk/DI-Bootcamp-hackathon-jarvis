@@ -1,4 +1,3 @@
-import { NotFoundComponent } from './../../../../safex/src/app/project/pages/not-found/not-found.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { CommonModule } from '@angular/common';
@@ -41,6 +40,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +63,7 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
     ResizerComponent,
     DashboardComponent,
     CardReportingComponent,
+    NotFoundPageComponent,
   ],
   imports: [
     CommonModule,
