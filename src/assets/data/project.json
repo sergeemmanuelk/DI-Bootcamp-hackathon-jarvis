@@ -2,10 +2,10 @@
   "id": "140892",
   "name": "Jarvis",
   "url": "https://github.com/sergeemmanuelk/DI-Bootcamp-hackathon-jarvis",
-  "description": "",
+  "description": "Suivi de bugs, Gestion d'incident, Gestion de projet",
   "category": "Software",
-  "createdAt": "2020-06-12T16:00:00.000Z",
-  "updatedAt": "2020-06-13T16:00:00.000Z",
+  "createdAt": "2023-01-19T08:00:00.000Z",
+  "updatedAt": "2023-01-19T09:00:00.000Z",
   "users": [
     {
       "id": "d65047e5-f4cf-4caa-9a38-6073dcbab7d1",
@@ -39,7 +39,7 @@
       "description": "<p>Ce projet vise à améliorer l’efficience et l’efficacité des processus de suivi des bugs, de gestion des incidents et de gestion de projet afin d’aider les équipes à créer des logiciels de classe mondiale et plus rapidement.</p><p><br></p><p>L'application permettra aux parties prenantes de suivre plus facilement les projets, de signaler les bugs, les incidents et les problèmes rencontrés lors du développement des logiciels.</p><p><br></p><p><strong>Piles technologiques</strong></p><p><br></p><br><ul><li><a href='https://angular.io/' rel='noopener noreferrer' target='_blank' style='color: rgb(3, 102, 214);'>Angular</a></li><li><a href='https://www.typescriptlang.org/' rel='noopener noreferrer' target='_blank' style='color: rgb(3, 102, 214);'>TypeScript</a></li><li>Modules d'interface utilisateur :</li><li class='ql-indent-1'><a href='https://tailwindcss.com/' rel='noopener noreferrer' target='_blank' style='color: rgb(3, 102, 214);'>TailwindCSS</a></li><li class='ql-indent-1'>Angular CDK&nbsp;<a href='https://material.angular.io/cdk/drag-drop/overview' rel='noopener noreferrer' target='_blank' style='color: rgb(3, 102, 214);'>drag and drop</a></li>",
       "type": "Task",
       "status": "Backlog",
-      "priority": "Moyenne",
+      "priority": "Medium",
       "listPosition": 2,
       "createdAt": "2023-01-19T10:30:00.000Z",
       "updatedAt": "2023-01-19T14:51:00.000Z",

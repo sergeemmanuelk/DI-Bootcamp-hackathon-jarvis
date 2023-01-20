@@ -11,7 +11,7 @@ import { ProjectQuery } from '@trungk18/project/state/project/project.query';
 })
 export class DashboardComponent implements OnInit {
 
-  breadcrumbs: string[] = ['Projects', 'Jarvis', 'Tableau de board'];
+  breadcrumbs: string[] = ['Projets', 'Jarvis', 'Tableau de board'];
   report  : {done;pending;hight} = {
     done : 0,
     pending : 0,
@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   cards      : JReportingcard [] = [
     {
       title : 0,
-      description : 'projets  terminé'
+      description : 'projets terminé'
     },
     {
       title : 0,

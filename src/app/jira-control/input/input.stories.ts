@@ -27,5 +27,5 @@ const Template: Story<InputComponent> = (args: InputComponent) => ({
 export const Flat: Story<InputComponent> = Template.bind({});
 Flat.args = {
   containerClassName: 'flat text-textMedium',
-  placeholder: 'Search'
+  placeholder: 'Recherche'
 };

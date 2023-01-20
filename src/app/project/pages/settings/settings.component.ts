@@ -67,7 +67,7 @@ export class SettingsComponent implements OnInit {
     this._projectService.updateProject(formValue);
     this._notification.create(
       'success',
-      'Changes have been saved successfully.',
+      'Les modifications ont été enregistrées avec succès.',
       ''
     );
   }

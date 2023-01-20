@@ -10,17 +10,17 @@ export enum IssueType {
 
 export enum IssueStatus {
   BACKLOG = 'Backlog',
-  SELECTED = 'Planification',
+  SELECTED = 'Selected',
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  IN_PROGRESS = 'EnCours',
-  DONE = 'Fait'
+  IN_PROGRESS = 'InProgress',
+  DONE = 'Done'
 }
 
 export const IssueStatusDisplay = {
   [IssueStatus.BACKLOG]: 'Backlog',
-  [IssueStatus.SELECTED]: 'Planification',
-  [IssueStatus.IN_PROGRESS]: 'En cours',
-  [IssueStatus.DONE]: 'Fait'
+  [IssueStatus.SELECTED]: 'Selected for Development',
+  [IssueStatus.IN_PROGRESS]: 'In Progress',
+  [IssueStatus.DONE]: 'Done'
 };
 
 export enum IssuePriority {

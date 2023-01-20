@@ -24,19 +24,19 @@
               className="btn-empty"
               [isActive]="filterQuery.onlyMyIssue$ | async"
               (click)="onlyMyIssueChanged()">
-        Only My Issues
+        Mes problèmes
     </j-button>
     <j-button class="ml-3"
               [isActive]="filterQuery.ignoreResolve$ | async"
               (click)="ignoreResolvedChanged()"
               className="btn-empty">
-        Ignore Resolved
+            Ignorer / Résolu
     </j-button>
     <div class="ml-3 flex items-center"
          *ngIf="filterQuery.any$ | async">
         <div class="mr-3 w-px bg-backgroundMedium self-stretch"></div>
         <j-button [className]="'btn-secondary'"
-                  (click)="resetAll()">Clear all
+                  (click)="resetAll()">Effacer tout
         </j-button>
     </div>
 </div>

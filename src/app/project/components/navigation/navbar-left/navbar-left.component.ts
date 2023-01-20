@@ -20,7 +20,7 @@ export class NavbarLeftComponent implements OnInit {
 
   ngOnInit(): void {
     this.items = [
-      new NavItem('search', 'Rechercher un tache', this.openSearchDrawler.bind(this)),
+      new NavItem('search', 'Rechercher une tache', this.openSearchDrawler.bind(this)),
       new NavItem('plus', 'Signaler un probleme', this.openCreateIssueModal.bind(this))
     ];
   }

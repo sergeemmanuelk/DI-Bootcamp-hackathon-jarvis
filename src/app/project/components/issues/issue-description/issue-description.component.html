@@ -12,10 +12,10 @@
                   [className]="'btn-primary'"
                   class="mr-2"
                   (click)="save()">
-            Save</j-button>
+            Sauvegarder</j-button>
         <j-button (click)="cancel()"
                   [className]="'btn-empty'">
-            Cancel
+            Annuler
         </j-button>
     </div>
 </ng-container>
@@ -25,11 +25,11 @@
          *ngIf="!isEditing"
          (click)="setEditMode(true)">
         <div class="ql-editor"
-             [innerHTML]="issue.description || 'Click to add description'"></div>
+             [innerHTML]="issue.description || 'Cliquez pour ajouter une description'"></div>
         <div class="icon-edit">
             <i nz-icon
                class="cursor-pointer"
-               title="Click to edit"
+               title="Cliquez pour modifier"
                nzType="edit"
                nzTheme="outline"></i>
         </div>
